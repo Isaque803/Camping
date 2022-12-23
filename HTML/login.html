@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../STYLE/login/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;500;600;700;800;900&display=swap">
+    <script src="https://kit.fontawesome.com/78f0a022bd.js" crossorigin="anonymous"></script>
+    <title>YelpCamp</title>
+</head>
+<body>
+    <header>
+        <div><img src="../Assets/Logo.svg" alt=""></div>
+        <a href="../HTML/search-page.html">Back to campgrounds</a>
+    </header>
+
+    <main>
+        <section class="formulary">
+            <h1>Start exploring camps from all around the world.</h1>
+            <div class="login">
+                <form>
+                    <label for="email">Username</label><br>
+                    <input type="email" name="email" id="email" placeholder="Example@gmail.com" required><br>
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required><br>
+                    <button>Login</button>
+                </form>
+                <p>Not a user yet? <span onclick="toggleLogin()">Create an account</span>
+            </div>
+
+            <div class="create-account">
+                <form>
+                    <label for="email">Username</label><br>
+                    <input type="email" name="email" id="email-register" placeholder="Example@gmail.com" required><br>
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="password-register" placeholder="Choose password" required><br>
+                    <button>Create an account</button>
+                </form>
+                <p>Already a user? <span onclick="toggleLogin()">Sign in</span>
+            </div>
+        </section>
+
+        <div class="aside">
+            <div class="quote">
+                <q>
+                    YelpCamp has honestly saved me hours of research time, and the camps on here
+                    are definitely well picked and added.
+                </q>
+                <div class="user-info">
+                    <img src="../Assets/User Testimonial.svg" alt="user">
+                    <p>
+                        May Andrews<br>
+                        <span>Profissional Hiker</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../JS/login.js"></script>
+</body>
+</html>

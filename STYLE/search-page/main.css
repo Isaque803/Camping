@@ -1,0 +1,303 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+a, li {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  margin: 0rem 6rem;
+  font-family: "Archivo", sans-serif;
+  overflow-x: hidden;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 2rem 0rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0rem;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: -1px;
+  left: 0px;
+  padding: 1.5rem 6rem;
+  z-index: 10;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+header a {
+  color: black;
+}
+header div {
+  margin-right: 2rem;
+}
+header nav {
+  width: 100%;
+}
+header .user-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+header .user-links a {
+  padding: 1rem;
+  border-radius: 5px;
+}
+header .user-links a:hover {
+  background-color: hsl(30deg, 65%, 90%);
+}
+header .user-links ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+header .user-links .btn-register {
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+header .user-links .btn-register::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.6s ease;
+}
+header .user-links .btn-register:hover::after {
+  width: 90%;
+}
+header .user-links .btn-register:hover {
+  background-color: rgb(50, 50, 50);
+}
+header .menu-mobile {
+  display: none;
+  margin-right: 0rem;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 0.4rem;
+  background-color: hsl(30deg, 65%, 95%);
+  align-items: center;
+  cursor: pointer;
+}
+header .menu-mobile span {
+  display: inline-block;
+  width: 100%;
+  height: 5px;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  border-radius: 5px;
+}
+header .menu-mobile span::before, header .menu-mobile span::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  transition: all 0.4s ease;
+  border-radius: 5px;
+}
+header .menu-mobile span::before {
+  top: -12px;
+}
+header .menu-mobile span::after {
+  bottom: -12px;
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 1.5rem 2rem;
+  }
+}
+@media (max-width: 850px) {
+  header {
+    justify-content: space-between;
+  }
+  header nav {
+    display: none;
+    position: absolute;
+    animation: transition 0.4s ease forwards;
+  }
+  header.active nav {
+    display: block;
+    width: 250px;
+    height: calc(100vh + 1px);
+    background-color: hsl(30deg, 65%, 95%);
+    top: 0px;
+    right: 0px;
+    padding: 0rem 1rem;
+    box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+  header.active nav .user-links {
+    flex-direction: column;
+    margin-top: 7rem;
+    justify-content: start;
+    gap: 40px;
+  }
+  header.active nav .user-links ul {
+    flex-direction: column;
+    gap: 40px;
+  }
+  header .menu-mobile {
+    display: flex;
+  }
+  header.active span {
+    background-color: transparent;
+  }
+  header.active span::before {
+    transform: rotate(-45deg);
+    top: 0px;
+  }
+  header.active span::after {
+    transform: rotate(45deg);
+    bottom: 0px;
+  }
+}
+@keyframes transition {
+  to {
+    transform: translateX(0%);
+  }
+  from {
+    transform: translateX(100%);
+  }
+}
+main {
+  margin-top: 7rem;
+}
+
+.sec-search-camps {
+  background-color: hsl(30deg, 65%, 96%);
+  padding: 4rem 2rem;
+  margin-top: 1rem;
+}
+.sec-search-camps h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.sec-search-camps p, .sec-search-camps a, .sec-search-camps .search {
+  color: rgb(75, 74, 71);
+}
+.sec-search-camps a {
+  text-decoration: underline;
+}
+.sec-search-camps .search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 1rem 0rem;
+}
+.sec-search-camps .search div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 3px;
+}
+.sec-search-camps .search div input {
+  width: 100%;
+  border: none;
+}
+.sec-search-camps .search div input:focus {
+  outline: none;
+}
+.sec-search-camps .search .btn-search {
+  padding: 0.9rem 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+}
+
+.sec-camps {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 2rem 0rem;
+  gap: 1rem;
+}
+.sec-camps .camp {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 1rem;
+  line-height: 1.4rem;
+}
+.sec-camps .camp h3 {
+  margin: 1rem 0rem;
+}
+.sec-camps .camp img {
+  width: 100%;
+  border-radius: 6px;
+}
+.sec-camps .camp div:hover a::after {
+  width: 100%;
+}
+.sec-camps .camp div a {
+  margin-top: 1rem;
+  display: block;
+  padding: 1rem;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 600;
+  position: relative;
+  transition: all 1.2s ease;
+}
+.sec-camps .camp div a::after {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transition: width 0.5s ease;
+}
+.sec-camps .camp div a:hover {
+  color: rgb(255, 255, 255);
+  border-color: transparent;
+}
+
+@media (max-width: 900px) {
+  body {
+    margin: 0rem 2rem;
+  }
+  .sec-camps {
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 650px) {
+  .search {
+    flex-direction: column;
+  }
+  .search div, .search button {
+    width: 100%;
+  }
+  .sec-camps {
+    grid-template-columns: auto;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

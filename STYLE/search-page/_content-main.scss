@@ -1,0 +1,142 @@
+main{
+    margin-top: 7rem;
+}
+
+.sec-search-camps{
+    background-color: hsl(30, 65%, 96%);
+    padding: 4rem 2rem;
+    margin-top: 1rem;
+
+    h2{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p, a, .search{
+        color:rgb(75, 74, 71);
+    }
+
+    a{
+        text-decoration: underline;
+    }
+
+    .search{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 1rem 0rem;
+
+        div{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: white;
+            padding: 0.9rem 1rem;
+            border: 1px solid rgb(179, 179, 179);
+            border-radius: 3px;
+
+            input{
+                width: 100%;
+                border: none;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+
+        .btn-search{
+            padding: 0.9rem 1rem;
+            background-color: black;
+            color: white;
+            border-radius: 3px
+        }
+    }
+}
+
+.sec-camps{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 2rem 0rem;
+    gap: 1rem;
+
+    .camp{
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        padding: 1rem;
+        line-height: 1.4rem;
+
+        h3{
+            margin: 1rem 0rem;
+        }
+
+        img{
+            width: 100%;
+            border-radius: 6px;
+
+        }
+
+        div{
+            &:hover a::after{
+                width: 100%;
+            }
+
+            a{
+                margin-top: 1rem;
+                display: block;
+                padding: 1rem;
+                color: black;
+                border: 1px solid rgba(0, 0, 0, 0.4);
+                text-align: center;
+                border-radius: 5px;
+                font-weight: 600;
+                position: relative;
+                transition: all 1.2s ease;
+    
+                &::after{
+                    content: '';
+                    width: 0%;
+                    height: 100%;
+                    position: absolute;
+                    background-color: black;
+                    transform: translate(-50%, -50%);
+                    border-radius: 5px;
+                    top: 50%;
+                    left: 50%;
+                    z-index: -1;
+                    transition: width 0.5s ease;
+                }
+    
+                &:hover{
+                    color: rgb(255, 255, 255);
+                    border-color: transparent;
+                }
+            }
+        }  
+    }
+}
+
+@media (max-width: 900px){
+    body{
+        margin: 0rem 2rem;
+    }
+
+    .sec-camps{
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 650px){
+    .search{
+        flex-direction: column;
+
+        div, button{
+            width: 100%;
+        }
+    }
+    
+    .sec-camps{
+        grid-template-columns: auto;
+    }
+}

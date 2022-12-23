@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../STYLE/add-camp/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;500;600;700;800;900&display=swap">
+    <script src="https://kit.fontawesome.com/78f0a022bd.js" crossorigin="anonymous"></script>
+    <title>YelpCamp</title>
+</head>
+<body>
+    <header>
+        <div><img src="../Assets/Logo.svg" alt="company logo"></div>
+        <nav>
+            <ul class="user-links">
+                <li><a href="../HTML/index.html">Home</a></li>
+                <li>
+                    <ul>
+                        <li><a href="../HTML/login.html">Login</a></li>
+                        <li><a href="../HTML/login.html" class="btn-register" aria-label="Button to create an account">Create an account</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menu-mobile">
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <div class="formulary">
+            <h1>Add New Campground</h1>
+            <form>
+                <label for="camp-name">Campground Name</label><br>
+                <input type="text" name="camp-name" id="camp-name" placeholder="Enter camprground name"><br>
+                <label for="price">Price</label><br>
+                <input type="text" name="price" id="price" placeholder="$97"><br>
+                <label for="image">Image</label><br>
+                <input type="url" name="image" id="image" placeholder="www.example.com.br"><br>
+                <label for="description">Description</label><br>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Enter description camprground"></textarea>
+
+                <button aria-label="Add a campground" class="btn-add">Add Campground</button>
+                <div class="alert">
+                    <p>It is necessary to register!</p>
+                </div>
+            </form>
+        </div> 
+    </main>
+
+    <footer>
+        <div><img src="../Assets/Logo.svg" alt="company logo"></div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+    <script src="../JS/tooltip.js"></script>
+</body>
+</html>
